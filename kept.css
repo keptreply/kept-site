@@ -1,0 +1,162 @@
+/* Kept — published pages.
+   Tokens taken straight from the Kept Brand Book: Ink, Paper, Chartreuse,
+   Archivo / Hanken Grotesk / Spline Sans Mono. The chartreuse dot keeps its
+   meaning from the app — filled is settled, hollow is not yet. */
+
+:root {
+  --ink: #101010;
+  --ink-raised: #1C1C1A;
+  --paper: #FAFAF6;
+  --fog: #F0F0EA;
+  --grey: #6E6E66;
+  --grey-soft: #8A8A82;
+  --chartreuse: #D8F34E;
+  --dot-ink: #9AB411;
+  --rule: rgba(16, 16, 16, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 24px 96px; }
+
+/* ---- masthead ---------------------------------------------------------- */
+.mast {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 40px 0 44px;
+  margin-bottom: 52px;
+}
+.mast .wrap { padding-bottom: 0; }
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--paper);
+}
+.stamp b {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: -0.045em;
+}
+.stamp i {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--chartreuse);
+  display: block;
+}
+.mast h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 7vw, 44px);
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  margin: 26px 0 0;
+}
+.mast p { color: var(--grey-soft); margin: 12px 0 0; font-size: 15px; max-width: 46ch; }
+
+/* ---- mono utility label ------------------------------------------------ */
+.eyebrow {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+.mast .eyebrow { color: var(--grey-soft); }
+
+/* Status line — the dot means what it means in the app. */
+.status { display: flex; align-items: center; gap: 8px; margin-top: 22px; }
+.status i {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--chartreuse); display: block; flex: none;
+}
+
+/* ---- body -------------------------------------------------------------- */
+h2 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+  margin: 48px 0 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+h3 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: -0.01em;
+  margin: 26px 0 6px;
+}
+p { margin: 0 0 14px; }
+ul { margin: 0 0 16px; padding-left: 0; list-style: none; }
+li { position: relative; padding-left: 20px; margin-bottom: 8px; }
+li::before {
+  content: "";
+  position: absolute; left: 2px; top: 0.62em;
+  width: 6px; height: 6px; border-radius: 50%;
+  border: 1.5px solid var(--dot-ink);
+}
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--dot-ink); }
+strong { font-weight: 700; }
+
+/* ---- data table -------------------------------------------------------- */
+.rows { border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; margin: 18px 0 24px; }
+.row { display: flex; gap: 16px; padding: 13px 16px; border-bottom: 1px solid var(--rule); background: var(--fog); }
+.row:last-child { border-bottom: none; }
+.row dt { flex: 0 0 34%; font-weight: 700; font-size: 14px; margin: 0; }
+.row dd { flex: 1; margin: 0; font-size: 14px; color: var(--grey); }
+
+/* ---- index cards ------------------------------------------------------- */
+.cards { display: grid; gap: 10px; margin-top: 8px; }
+.card {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 20px; border: 1px solid var(--rule); border-radius: 14px;
+  background: var(--fog); text-decoration: none; color: var(--ink);
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+.card:hover { border-color: var(--dot-ink); transform: translateY(-1px); color: var(--ink); }
+.card b { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.02em; display: block; }
+.card span { font-size: 13.5px; color: var(--grey); }
+.card em { font-style: normal; font-size: 20px; color: var(--dot-ink); }
+
+/* ---- callout ----------------------------------------------------------- */
+.note {
+  background: var(--ink); color: var(--paper);
+  border-radius: 14px; padding: 22px 24px; margin: 26px 0;
+}
+.note p { margin: 0; font-size: 14.5px; color: #D9D9D2; }
+.note p + p { margin-top: 10px; }
+.note .eyebrow { color: var(--chartreuse); display: block; margin-bottom: 9px; }
+
+footer {
+  margin-top: 64px; padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center;
+}
+footer a { text-decoration: none; font-size: 13.5px; color: var(--grey); }
+footer a:hover { color: var(--dot-ink); }
+
+:focus-visible { outline: 2px solid var(--dot-ink); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (max-width: 520px) {
+  .row { flex-direction: column; gap: 4px; }
+  .row dt { flex: none; }
+}
